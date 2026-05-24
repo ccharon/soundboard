@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Soundboard</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="simple soundboard using html5 and css only">
+
+    <link rel="icon" type="image/jpeg" href="./favicon.jpg">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="./favicon.jpg" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./favicon.jpg" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./favicon.jpg" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./favicon.jpg" />
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Create a grid container for the buttons -->
+    <div class="grid-container">
+        <!-- Use emoji buttons, and each button plays a different sound -->
+        <button class="emoji-button" id="boeses-lachen-btn">😈</button> 
+        <button class="emoji-button" id="party-time-btn">🥳</button>
+        <button class="emoji-button" id="hallelujah-btn">😇</button>
+        <button class="emoji-button" id="lachen-btn">😂</button>
+        <button class="emoji-button" id="applaus-btn">👏</button>
+        <button class="emoji-button" id="auto-hupe-btn">🚗</button>
+        <button class="emoji-button" id="scifi-btn">👻</button>
+        <button class="emoji-button" id="explosion-btn">💣</button>
+        <button class="emoji-button" id="squeak-btn">🐥</button>
+        <button class="emoji-button" id="baby-btn">😭</button>
+        <button class="emoji-button" id="ka-ching-btn">🤑</button>
+        <button class="emoji-button" id="bark-btn">🐶</button>
+        <button class="emoji-button" id="meow-btn">🐱</button>
+        <button class="emoji-button">🐷</button>
+        <button class="emoji-button">🦁</button>
+        <button class="emoji-button">🐵</button>
+        <button class="emoji-button">🐻</button>
+        <button class="emoji-button" id="horse-btn">🐴</button>
+        <button class="emoji-button">🦄</button>
+        <button class="emoji-button">🦖</button>
+        <button class="emoji-button">💨</button>
+        <button class="emoji-button">👶</button>
+        <button class="emoji-button">🤧</button>
+        <button class="emoji-button" id="old-phone-btn">📞</button>
+        <button class="emoji-button">🚒</button>
+        <button class="emoji-button">🛎️</button>
+        <button class="emoji-button">🚨</button>
+        <button class="emoji-button" id="zombie-btn">🧟</button>
+        <button class="emoji-button">⏰</button>
+
+        <!-- Repeat the emoji buttons and associated sounds as needed -->
+    </div>
+
+    <!-- All sounds are downloaded from pixabay and are free -->
+
+    <!-- https://pixabay.com/de/sound-effects/evil-laugh-49831/ -->
+    <audio id="boeses-lachen">
+        <source src="./media/evil-laugh.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- https://pixabay.com/de/sound-effects/081483-pinkie-it39s-party-timewav-82658/ -->
+    <audio id="party-time">
+        <source src="./media/party-time.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- https://pixabay.com/de/sound-effects/058140-hallelujah-88495/ -->
+    <audio id="hallelujah">
+        <source src="./media/hallelujah.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- https://pixabay.com/de/sound-effects/laughter-29686/ -->
+    <audio id="lachen">
+        <source src="./media/lachen.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- https://pixabay.com/de/sound-effects/short-crowd-cheer-6713/ -->
+    <audio id="applaus">
+        <source src="./media/applaus.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- -->
+    <audio id="auto-hupe">
+        <source src="./media/auto-hupe.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id="ka-ching">
+        <source src="./media/ka-ching.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- https://pixabay.com/de/sound-effects/60x27s-scifi-2-139687/ -->
+    <audio id="scifi">
+        <source src="./media/scifi.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- https://pixabay.com/de/sound-effects/explosion-80108/ -->
+    <audio id="explosion">
+        <source src="./media/explosion.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- https://pixabay.com/de/sound-effects/squeaky-toy-2-44491/ -->
+    <audio id="squeak">
+        <source src="./media/squeak.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- https://pixabay.com/de/sound-effects/child-crying-113110/ -->
+    <audio id="baby">
+        <source src="./media/baby.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- https://pixabay.com/de/sound-effects/multiple-dog-barks-king-charles-spaniel-97073/ -->
+    <audio id="bark">
+        <source src="./media/bark.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- https://pixabay.com/de/sound-effects/cat-meow-6226/ -->
+    <audio id="meow">
+        <source src="./media/meow.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- https://pixabay.com/de/sound-effects/horse-123780/ -->
+    <audio id="horse">
+        <source src="./media/horse.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- https://pixabay.com/de/sound-effects/grusel-brains-brains-101087/ -->
+    <audio id="zombie">
+        <source src="./media/brains.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- https://pixabay.com/de/sound-effects/film-spezialeffekte-sound-effect-old-phone-191761/ -->
+    <audio id="old-phone">
+        <source src="./media/old-phone.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="soundboard.js"></script>
+</body>
+
+</html>

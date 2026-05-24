@@ -1,0 +1,1 @@
+.grid-container{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:30px}.emoji-button{cursor:pointer;border:0;outline:0;padding:0;background:transparent;font-size:120px;width:180px;height:180px;border-radius:50%}.emoji-button:active{transform:scale(0.9)}
