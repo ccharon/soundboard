@@ -1,0 +1,52 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install minification tools
+        run: sudo npm install -g uglify-js uglifycss
+
+      - name: Minify JS
+        run: uglifyjs soundboard.js -o soundboard.js -c -m
+
+      - name: Minify CSS
+        run: uglifycss styles.css > styles.css.tmp && mv styles.css.tmp styles.css
+
+      - name: Prepare dist directory
+        run: |
+          mkdir dist
+          cp index.html styles.css soundboard.js favicon.jpg dist/
+          cp -r media dist/
+
+      - name: Push to dist branch
+        run: |
+          git config user.email "github-actions@github.com"
+          git config user.name "GitHub Actions"
+          git checkout --orphan dist-new
+          git rm -rf . --cached
+          git add index.html styles.css soundboard.js media/ favicon.jpg
+          git commit -m "dist: build from $(git rev-parse --short HEAD)"
+          git push origin HEAD:dist --force
+
+      - name: Trigger webhook
+        env:
+          WEBHOOK_SECRET: ${{ secrets.WEBHOOK_SECRET }}
+        run: |
+          TIMESTAMP=$(date +%s)
+          ID=$(uuidgen | tr '[:upper:]' '[:lower:]')
+          PAYLOAD="{\"id\":\"$ID\",\"param\":\"soundboard\",\"unix_seconds\":$TIMESTAMP}"
+          SIG=$(echo -n "$PAYLOAD" | openssl dgst -sha256 -hmac "$WEBHOOK_SECRET" | awk '{print $2}')
+          curl -sf -X POST https://webhook.erdferkel.eu/ \
+            -H "Content-Type: application/json" \
+            -H "X-Hub-Signature-256: sha256=$SIG" \
+            -d "$PAYLOAD"
