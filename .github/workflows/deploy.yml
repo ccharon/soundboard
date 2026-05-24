@@ -32,10 +32,11 @@ jobs:
         run: |
           git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
+          SHA=$(git rev-parse --short HEAD)
           git checkout --orphan dist-new
           git rm -rf . --cached
           git add index.html styles.css soundboard.js media/ favicon.jpg
-          git commit -m "dist: build from $(git rev-parse --short HEAD)"
+          git commit -m "dist: build from $SHA"
           git push origin HEAD:dist --force
 
       - name: Trigger webhook
