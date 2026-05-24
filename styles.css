@@ -1,0 +1,31 @@
+/* Apply styles for the grid container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    /* Creates a responsive grid with a minimum column width of 100px */
+    gap: 30px;
+    /* Adjust the gap between buttons as needed */
+}
+
+/* Apply styles for the button */
+.emoji-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 0;
+    background: transparent;
+    font-size: 120px;
+    /* Make font-size three times larger */
+    width: 180px;
+    /* Set the width to three times larger */
+    height: 180px;
+    /* Set the height to three times larger */
+    border-radius: 50%;
+    /* Make it round */
+}
+
+/* Apply styles for the pressed effect */
+.emoji-button:active {
+    transform: scale(0.9);
+    /* You can adjust the scaling factor as needed */
+}
